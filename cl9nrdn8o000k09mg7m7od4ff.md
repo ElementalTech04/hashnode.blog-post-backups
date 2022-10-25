@@ -14,7 +14,9 @@ Suddenly, topics and ideas for what I would go on to write popped into my head e
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bXAOYGqHFIw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-"I try to follow what the greatest do" Indeed Andy Indeed
+> "I choose to follow what the greatest do"
+
+Indeed Andy Indeed
 
 Anderson .Paak's Malibu album was on repeat when I first started my career in software engineering and if you get a chance to check it out, I highly recommend it. Front to back, the album was a masterpiece and I wanted to translate that energy into every block of code I wrote. "The Bird" is the first song on the album and it starts the mood off perfectly. The chill melodies and how the words flow line-to-line brings you into a sort of calm trance. This album, while it starts off on a slow tone, still packs a meaningful punch and the rest of the album only continues that impact. That is what I am hoping for with this blog.
 
