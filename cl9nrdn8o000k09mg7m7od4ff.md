@@ -1,18 +1,18 @@
 # A New Beginning
 
-> “What would life be if we had no courage to attempt anything?”
-> – Vincent Van Gogh
+> "What would life be if we had no courage to attempt anything?"
+> 
+> ***Vincent Van Gogh***
 
-For a while, starting a developer blog was something out of a fairy tale in terms of things I would go on to start and accomplish. In my head, only the best of the best had blogs and I needed to live up to the many tech YouTubers that I watched on a daily basis before even starting to think about my first post. 
+For a while, starting a developer blog was something out of a fairy tale in terms of things I would go on to start and accomplish. In my head, only the best of the best had blogs and I needed to live up to the many tech YouTubers that I watched on a daily basis before even starting to think about my first post.
 
 Until I found this video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fxLFjOa-9UY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fxLFjOa-9UY"></iframe>
 
 Suddenly, topics and ideas for what I would go on to write popped into my head every day leading up to my writing of this post. So in honor of the start of my journey, enjoy a music break before continuing :)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bXAOYGqHFIw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bXAOYGqHFIw"></iframe>
 
 > "I choose to follow what the greatest do"
 
@@ -22,26 +22,19 @@ Anderson .Paak's Malibu album was on repeat when I first started my career in so
 
 While the beginning may be slow and chill, my vision for this space is to grow and transform into something that may positively impact many developers and those seeking to lead the developer life. As I outline my journey to becoming better and better at this craft, I would only hope to inspire others in the same position. I am excited to write about various tech topics in the coming months and share them with you all. Here are some major goals and topics I wish to cover in Travis Tech Blog:
 
-
-- Entering the industry with no degree
-
-- Day-to-Day life of a software engineer
-
-- Java, Javascript, and Database Development (My main stack at the moment and also encompasses a lot of frameworks)
-
-- New technologies and projects I start with the knowledge I acquire
-
-- My current Wellness app project that is being built using [Ionic](https://ionicframework.com/) 
-
-- Random updates on career and professional growth that I may find helpful to share
-
+* Entering the industry with no degree
+    
+* Day-to-Day life of a software engineer
+    
+* Java, Javascript, and Database Development (My main stack at the moment and also encompasses a lot of frameworks)
+    
+* New technologies and projects I start with the knowledge I acquire
+    
+* My current Wellness app project that is being built using [Ionic](https://ionicframework.com/)
+    
+* Random updates on career and professional growth that I may find helpful to share
+    
 
 Posting on a semi-regular basis is my intention for this blog to be able to touch on all of the topics above. At the time of writing, I am between studying for tech interviews and finishing my portfolio website (built in the [Gatsby](https://www.gatsbyjs.com/) framework). For the next few posts, I will be outlining things I learn through this process and any knowledge tips I can pass on.
 
 Comments, suggestions, corrections, and encouragement is always welcomed as I am not the smartest person on earth and I am always willing to learn from my peers. Enjoy! :)
-
-
-
-
-
-
