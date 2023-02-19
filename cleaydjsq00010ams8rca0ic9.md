@@ -8,8 +8,7 @@ I was inspired mostly by @[Tanisha Chandani](@tanishachandani) to start this cha
 
 For development, I am using the Remix IDE due to its simplicity and tool set offering for developing Solidity contracts. Truly the swiss knife of blockchain development as it is the most popular development environment for writing and testing smart contracts on the Ethereum blockchain. It is an online tool that provides developers with a user-friendly interface for creating and deploying Solidity smart contracts. Remix comes equipped with a suite of features, including a code editor, compiler, debugger, and testing environment, that enable developers to write, test, and debug their contracts in a single platform. Additionally, Remix has built-in integrations with various Ethereum tools, such as MetaMask and Geth, which makes it easy for developers to deploy their contracts directly from the IDE. Overall, Remix is a powerful and flexible IDE that provides a comprehensive solution for developing and deploying smart contracts on Ethereum.
 
-Want to know more about getting started with Remix? Check out some of these tutorials below.  
-  
+Want to know more about getting started with Remix? Check out some of these tutorials below.
 
 ### Chainlink + Free Code Camp
 
@@ -23,11 +22,10 @@ Want to know more about getting started with Remix? Check out some of these tuto
 
 %[https://www.youtube.com/watch?v=ipwxYa-F1uY&t=191s] 
 
-These are great tutorials to get a grasp of getting started with smart contract development with the Remix IDE. All of these videos are from reputable people/entities in the blockchain space and they all have a lot of great content to learn from on their channels.  
-  
-I won't reveal the whole project at once but I will explain the pieces I was working on today.  
+These are great tutorials to get a grasp of getting started with smart contract development with the Remix IDE. All of these videos are from reputable people/entities in the blockchain space and they all have a lot of great content to learn from on their channels.
 
-###   
+I won't reveal the whole project at once but I will explain the pieces I was working on today.
+
 Tasks Accomplished
 
 * Create a role-based access control mechanism that will assign roles to users with NFT access passes
@@ -61,8 +59,7 @@ Tasks Accomplished
 
 ### First things first
 
-Let's get the UserAccount contract out of the way. With this contract, it sets the basis of access control for the platform. Users will navigate through the platform with this NFT and will gain access to different parts of the UI depending on their mapped role. We will get to the role access later. First let's make this NFT.  
-  
+Let's get the UserAccount contract out of the way. With this contract, it sets the basis of access control for the platform. Users will navigate through the platform with this NFT and will gain access to different parts of the UI depending on their mapped role. We will get to the role access later. First let's make this NFT.
 
 ```solidity
 contract UserAccountNFT is IERC721, IERC1155, Ownable {
@@ -75,7 +72,7 @@ contract UserAccountNFT is IERC721, IERC1155, Ownable {
         string propertyType;
     }
 
-    struct Person {
+        struct Person {
         uint256 personId;
         string profilePhoto;
         string firstName;
@@ -90,18 +87,18 @@ contract UserAccountNFT is IERC721, IERC1155, Ownable {
     mapping (uint256 => address) private _owners;
     mapping (address => uint256) private _balances;
     mapping (uint256 => uint256) private _policiesOwned;
-    mapping (uint256 => uint256[]) private _itemsOwned;
+    mapping (uint256 => uint256[]) private _petsOwned;
     mapping (uint256 => bytes) private _personData;
 
-    Person public accountInfo;
+    Person internal accountInfo;
     IERC20 public erc20Token;
     IERC721 public policyNFT;
-    IERC721 public itemNFT;
+    IERC721 public petNFT;
 
-    constructor(IERC20 _erc20Token, IERC721 _policyNFT, IERC721 _itemNFT) {
+    constructor(IERC20 _erc20Token, IERC721 _policyNFT, IERC721 _petNFT) {
         erc20Token = _erc20Token;
         policyNFT = _policyNFT;
-        itemNFT = _itemNFT;
+        petNFT = _petNFT;
     }
 
     function balanceOf(address owner, uint256 id) public view override returns (uint256) {
@@ -132,18 +129,6 @@ contract UserAccountNFT is IERC721, IERC1155, Ownable {
         safeTransferFrom(from, to, id, 1, "");
     }
 
-    function safeTransferFrom(address from, address to, uint256 id, uint256 amount, bytes memory data) public override {
-        if (_owners[id] == from) {
-            if (amount == 1) {
-                _owners[id] = to;
-            } else {
-                revert("UserAccount: amount must be 1");
-            }
-        } else {
-            revert("UserAccount: sender is not owner");
-        }
-    }
-
     function mint(uint256 id, address initialOwner) public {
         _owners[id] = initialOwner;
         _balances[initialOwner]++;
@@ -151,23 +136,21 @@ contract UserAccountNFT is IERC721, IERC1155, Ownable {
 
     function burn(uint256 id, uint256 amount) public override {
         require(_owners[id] == msg.sender, "UserAccount: sender is not owner");
-        _burn(id, amount);
+        super.burn(id, amount);
     }
 
     function approve(address to, uint256 id) public override {
         require(_owners[id] == msg.sender, "UserAccount: sender is not owner");
-        _approve(msg.sender, to, id);
+        super.approve(msg.sender, to, id);
     }
         
     function setApprovalForAll(address operator, bool approved) public override {}
 
     function isApprovedForAll(address owner, address operator) public view override returns (bool) {}
 
-    function safeTransferFrom(address from, address to, uint256 id, uint256 amount, bytes memory data) public override {}
-
-    function setAccountInfo(uint256 accountId, Person memory person) public onlyOwner {
+    function setAccountInfo(uint256 tokenId, Person memory person) public onlyOwner {
         accountInfo = person;
-        _personData[accountId] = abi.encode(person);
+        _personData[tokenId] = abi.encode(person);
     }
 
     function getOwner(uint256 ownerId) public view returns (Person memory) {
@@ -261,6 +244,6 @@ contract PlatformAccessControl is AccessControl {
 }
 ```
 
-Will be back tomorrow with some more progress on this and an Ionic app :)  
-  
+Will be back tomorrow with some more progress on this and an Ionic app :)
+
 All feedback is welcomed!
