@@ -1,4 +1,4 @@
-# #100DaysofCode- Day 1
+# #100DaysofCode - Day 1
 
 *Day 1 of the 100 Days of Code challenge*
 
